@@ -1,0 +1,1334 @@
+*******************************************
+Season -1 Selenium  
+Day  - 29th  September  - Friday
+*******************************************	
+
+
+Selenium 
+
+is an API or jar/s 
+
+Java is also an API 
+
+https://www.selenium.dev/
+
+
+Selenium automates browsers. That's it!
+
+
+
+Latest Version : 4.13.0 (September 25, 2023)  == we don't use latest version because of compatability issues
+
+Previous Releases
+Here you can find a more complete list of Selenium releases.
+
+Lonterm Stable Version : 
+
+selenium-server-standalone-3.141.59.jar
+
+
+
+how to add any jar to eclipse Java project ?
+
+right click on project -> go to build path -> configure build path --> click on Libraries tab --> 
+click on classpath --> click on Add exteernal jars button -> choose the jar from the location where you have downloaded 
+-> Click open -> apply -->apply and close 
+
+Now you see the jars under 
+Referenced Libraries in the project 
+
+--------------------------------
+org.openqa.selenium
+
+Exception in thread "main" java.lang.IllegalStateException: 
+The path to the driver executable must be set by the webdriver.chrome.driver system property; 
+for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver.
+The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html
+
+webdrivermanager download
+
+https://github.com/bonigarcia/webdrivermanager
+
+webdrivermanager-5.5.3
+
+webdrivermanager-5.5.3-fat.jar
+
+?????????????????????????????????????
+Assignment 
+
+to launch firefox browser and edge browser ?
+using both methods 
+
+?????????????????????????????????????
+
+
+*******************************************
+Season -1 Selenium  
+Day  - 3rd October - Tuesday
+*******************************************	
+
+
+for methods remember 3 points: 
+
+1. what arguments/paremters 
+2. what is the return type
+3. what does the method do 
+
+
+-------------------------------------
+Methods In WebDriver (13 methods)
+-------------------------------------
+
+
+
+
+findElement(By)
+findElements(By)
+
+
+
+
+
+
+
+
+
+
+
+subinterfaces:
+
+org.openqa.selenium.WebDriver.ImeHandler
+org.openqa.selenium.WebDriver.Navigation
+org.openqa.selenium.WebDriver.Options
+org.openqa.selenium.WebDriver.TargetLocator
+org.openqa.selenium.WebDriver.Timeouts
+org.openqa.selenium.WebDriver.Window
+
+
+-------------------------------
+get(String):void 
+
+here String is URL of app 
+---------------------------------
+close():void  this method will close the tab or window on which webdriver focus is 
+
+close methodd will close only one tab 
+
+
+------------------------------------
+
+quit():void this method will close all tabs or windows opened during that session 
+
+Interview :  diff b/w close and quit 
+
+Close : will close one tab or window on which webdriver focus is 
+ -> this will not kill chromedriver.exe task running in the backend
+
+quit : will close all tabs/windows opened during that session 
+-> this will  kill chromedriver.exe task running in the backend
+-----------------------------------------------
+getTitle():String 
+
+---------------------------------------------------
+getCurrentUrl() :String 
+-----------------------------------------------------
+getPageSource():String 
+---------------------------------------------------
+
+getWindowHandle():String 
+
+0-9 A-F 
+
+6E52B5F1ADB7E7032406E896732180DC
+
+-------------------------------------------------------
+
+getWindowHandles():Set<String> 
+
+------------------------------------------------------
+
+manage(): Options
+
+driver.manage().window().maximize();
+
+-----------------------------------------------------
+switchTo():TargetLocator
+
+-------------------------------------------
+
+navigate():Navigation
+
+back()
+forward()
+refresh()
+to(String)
+to(URL)
+
+
+*******************************************
+Season -1 Selenium  
+Day  - 4th October - Wednesday
+*******************************************	
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------
+get(String) : void
+close():void
+quit():void
+getTitle():String
+getCurrentUrl():String 
+getPageSource():String 
+getWindowHandle():String 
+getWindowHandles():Set<String>
+manage():Options
+navigate():Navigation
+switchTo():TargetLocator
+
+
+findElement(By):WebElement  anything you find on web page is WebElement ( link , text , img , radio etc ..)
+findElements(By):
+
+
+Locators in Selenium :
+
+className(String)
+cssSelector(String)
+id(String)
+linkText(String)
+name(String)
+partialLinkText(String)
+tagName(String)
+xpath(String)
+
+
+<input type="text" name="username" id="username" class="login_input" value="" fdprocessedid="e4hu8q">
+
+<a href="Register.php">New User Register Here</a>
+
+HTML Termiologies :
+
+<tagname attribute1="value of attribute1"  attribute2="value of attribute2"  ....>
+
+
+<tagname attribute1="value of attribute1"  attribute2="value of attribute2"    >text on element</tagname>
+
+
+Locators based on attributes :
+id(String)
+name(String)
+className(String)
+
+Locators based on link text  :
+
+only meant for links (links will have tagname a also called as anchor tag)
+
+linkText(String)
+
+partialLinkText(String)
+
+
+Loocators based on tagname and/or attributes and/or text on element
+
+xpath(String)
+cssSelector(String)
+
+Locators based on tagname :
+
+tagName(String) : this is not prefered to focus single webelement 
+
+used for focusing or collectiong more than one webelement 
+
+
+*******************************************
+Season -1 Selenium  
+Day  - 5th October - Thursday
+*******************************************	
+
+
+
+
+Methods In WebElement (16)
+
+
+
+findElement(By):WebElement
+findElements(By):List<WebElement>
+
+
+
+
+
+
+
+----------------------------------------------------
+sendKeys(CharSequence...):void
+
+CharSequence... also called String 
+
+--------------------------
+click():void 
+
+------------------------------
+
+clear():void this is used for input tagname (text feilds)
+
+---------------------------------
+getText():String
+----------------------------------
+getAttribute(String):String
+
+case 1: attribute having value 
+o/p : value of attribute
+
+case 2: attribute doesn't exist 
+o/p : null 
+
+case 3: attribte havinng no value 
+o/p : true ( we will discuss this in radio button and check boxes topic)
+
+
+---------------------------------------
+getCssValue(String):String
+---------------------------------
+
+getLocation():point  x and y coordinates
+getRect():Rectangle   ( x and y , height and width)
+getSize():Dimension   height and width 
+------------------------------------------
+
+isDisplayed():boolean
+isEnabled():boolean
+isSelected():boolean  ==> dropdown , check box , radio button 
+
+------------------------------------
+
+getTagName():String 
+-------------------------------------
+
+submit(): 
+
+to submit a form to server 
+
+----------------------------------------
+
+
+*******************************************
+Season -1 Selenium  
+Day  - 7th October - Saturday
+*******************************************	
+
+Links :
+
+<a href="ForgotPassword.php">Forgot Password?</a>
+
+<a href="https://affiliate-program.amazon.in/?utm_campaign=assocshowcase&amp;utm_medium=footer&amp;utm_source=GW&amp;ref_=footer_assoc" class="nav_a">Become an Affiliate</a>
+
+tagname is "a" also called anchor tag 
+
+
+--------------------------------------------
+
+Dropdown :
+
+
+to select some item from dropdown we have 2 ways 
+
+1) conventional way 
+
+using sendKeys
+
+2) Select class 
+
+
+Select   
+
+org.openqa.selenium.support.ui
+
+new Select(WebElement);
+
+selectByIndex(int)  here int is index of item starting from 0
+selectByValue(String)
+selectByVisibleText(String)
+
+
+?????????????????????????????
+Assignment 
+
+in https://www.facebook.com/
+click on "Create new account" 
+select your date of birth
+
+????????????????????????????????????????????
+
+*******************************************
+Season -2 Java   
+Day  - 8th October - Sunday
+*******************************************
+
+Arrays :
+
+
+Disadvantages :
+
+1. arrays doesn't have growable nature 
+
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+	at sep30th.ArraysDemo3.main(ArraysDemo3.java:23)
+
+2. arrays can't store hetrogenous or disimilar datatypes 
+
+3. no predfiened methods for arrays 
+
+
+======================================
+Collections in Java 
+======================================
+
+Collection is framework or API 
+
+
+							
+								Collection(I)
+								
+								
+				List(I)				Queue(I)			Set(I)	
+	
+			- ArrayList(C)								- HashSet(C)
+			- LinkedList(C)								- LinkedHashSet(C)
+			- Vector(C)									- SortedSet(I)
+			 - Stack(C)										- TreeSet(C)
+	
+	
+findElements(By):List<WebElement>   ArrayList(C)	
+getWindowHandles():Set<String> HashSet(C)
+	
+	
+	Collection (I):
+
+
+add(E):boolean 
+
+returns true when element is added to collection 
+returns false when element is not added to collection 
+
+addAll(Collection<? extends E>):boolean
+
+contains(Object):boolean 
+
+isEmpty():boolean
+
+remove(Object):boolean 
+
+size():int 
+
+
+============================
+List(I)
+
+add(int, E):void 
+
+
+get(int):E  ==> to retrive item from collection based on index 
+
+indexOf(Object):int 
+lastIndexOf(Object):int 
+
+remove(int):E 
+
+subList(int, int):List<E>
+
+================================
+
+ArrayList(C)
+
+
+ArrayList() // with intial capacity 10
+ArrayList(int)  
+ArrayList(Collection<? extends E>)
+
+*******************************************
+Season -2 Java   
+Day  - 9th October - Monday
+*******************************************
+
+
+
+Set(I)
+
+
+
+add(E):boolean 
+
+returns true when element is added to collection 
+returns false when element is not added to collection 
+
+addAll(Collection<? extends E>):boolean
+
+contains(Object):boolean 
+
+isEmpty():boolean
+
+remove(Object):boolean 
+
+size():int 
+
+
+HashSet(C): 
+
+
+here insertion of items or collection of items is based on hashing technique 
+
+this will internally use HashMap to store elements 
+
+
+
+HashSet()   //  default initial capacity (16) and load factor (0.75)
+HashSet(int)
+HashSet(int, float)
+HashSet(int, float, boolean)
+HashSet(Collection<? extends E>)
+
+
+
+To retrive or get items from HashSet we can use 
+
+1) for-each loop 
+
+2) using cursor concept called iterator()
+
+iterator():Iterator<E>
+
+hasNext():boolean  == it will return true if element is present in next level
+next():E  ==>   it will reterive the element present in next and also moves the cursor or iterator to next level 
+
+
+*******************************************
+Season -2 Java   
+Day  - 10th October - Tuesday
+*******************************************
+
+
+		Array List             			vs			HashSet
+		
+1. insertion order is preserved						1. insertion order is not preserved 
+
+2. same as arrays 									2. uses hashing to store elements
+
+3. duplicates are allowed							3. duplicates are not allowed 
+
+4. to reterive element we have get method  			4. here no get method we should use for-each loop and Iterator
+	
+		
+---------------------------------------------
+Exception Handling :
+
+		
+	
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at oct10th.ExceptionDemo1.main(ExceptionDemo1.java:20)	
+		
+
+
+
+try catch 
+
+
+try
+{
+
+//risky code (means which may give runtime)
+
+}
+catch(ExceptionName reference)
+{
+
+//handling code 
+or
+//user friendly code
+
+}
+finally
+{
+
+//compulsory code 
+
+
+}
+
+-----------------------------------------
+
+Thowable(C)
+
+
+getMessage():String 
+
+printStackTrace():void ==> this will print all the exception info on console 
+
+
+							Exception
+							
+							
+		1) checked exceptions				2)unchecked exception
+
+
+https://i0.wp.com/www.benchresources.net/wp-content/uploads/2017/02/exception-hierarchy-in-java.png
+
+
+5 keywords 
+
+
+try    catch   finally   throws   throw
+
+
+finally is a block can be present immediately after try or catch block 
+
+this block will be executed irrespective of exception 	
+							
+
+try catch
+
+
+try catch catch ... 
+
+try finally
+
+try catch catch ... finally 
+
+
+*******************************************
+Season -2 Java   
+Day  - 10th October - Tuesday
+*******************************************
+
+throw :
+
+to define user defined or custom exception 
+
+
+-------------------------------------
+Links Testing 
+
+*******************************************
+Season -2 Selenium   
+Day  - 12th October - Thursday
+*******************************************
+	
+
+findElements(By):List<WebElement>
+
+
+---------------------------------------------
+Xpath Writing techniques
+
+Xpath means XML path is a query lang to find XML nodes 
+
+HMTL is implementation of XML 
+
+									Xpath 
+									
+									
+			Absolute							Relative
+
+
+/html/body/table[2]/tbody/tr/td[2]/form/table/tbody/tr[2]/td[2]/input
+
+/html/body/table[2]/tbody/tr/td[2]/form/table/tbody/tr[2]/td[2]/input
+
+Relative :
+
+//tbody/tr[2]/td[2]/input
+
+			
+
+HTML Termiologies :
+
+<tagname attribute1="value of attribute1"  attribute2="value of attribute2"  ....>
+
+
+<tagname attribute1="value of attribute1"  attribute2="value of attribute2"    >text on element</tagname>
+
+
+1) xpath based on tagname and attribute
+
+//tagname[@attribute='value of attribute']
+
+//input[@id='username']
+
+//input[@class='login_input' and @type='text']
+
+2) xpath based on tagname and text 
+
+
+//tagname[text()='text on webelement']
+
+//a[text()='New User Register Here']
+
+3) xpath contains method
+
+//xpath[contains(@attribuute,'subset of value of attribute')]
+
+//xpath[contains(text(),'subset of text on webelement')]
+
+//img[contains(@src,'ios-button')]
+
+4) using xpath parent axes 
+
+//div[text()='Make Money with Us']/parent::div
+
+
+????????????????????????????????????????????????
+Assignment
+
+https://www.pepperfry.com/
+
+find no of links in "Partner With Us" module and print the
+text on links
+
+?????????????????????????????????????????????????????
+
+									
+*******************************************
+Season -2 Selenium   
+Day  - 13th October - Friday
+*******************************************								
+					
+Exception in thread "main" org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=118.0.5993.71)	
+
+Reason : there is a change in DOM (Document object Model) 
+Webdriver finds the refrence becoming old 
+
+Solution :
+
+create object or new reference of WebElements 
+
+Dropdown Testing :
+
+to find items in dropdown ,
+
+Method 1: 
+items have tagname "option"
+
+WebElement dropdown=driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
+		
+		List<WebElement> allItems=dropdown.findElements(By.tagName("option"));
+		
+Method 2:
+
+	//using Select class method getOptions():List<WebElement>
+		
+		List<WebElement> allItems=new Select(driver.findElement(By.xpath("//select[@id='searchDropdownBox']"))).getOptions();
+				
+============================
+TestNG
+============================
+unit testing framework
+
+Java : junit , testNG
+
+python : pytest ,unittest
+
+.net: Nunit 
+
+
+testNG  = Junit + Nunit 
+
+in TestNG , NG means Next Generation
+
+how to install TestNG plugin?
+
+- In Eclipse 
+
+go to "help" --> "Eclipse Market place"
+
+enter testng in "find" text fields
+
+click on "go" button
+
+
+you will see "TestNG for Eclipse" plugin 
+
+click on "Install"
+  		
+
+*******************************************
+Season -2 Selenium   
+Day  - 14th October - Saturday
+*******************************************
+
+
+
+Annotations in TestNG
+
+
+@Test
+public void testName()
+{
+
+
+} 
+
+@Test ==> means Test Case / Test Script
+
+if more than 1 @Test in a class , order of exection will be ascending order of testname 
+
+Parameters for @Test :
+
+
+@BeforeMethod will be executed before each and every @Test in that class
+
+@BeforeMethod
+public void setUp()
+{
+
+}
+  
+
+@AfterMethod will be executed after each and every @Test in that class
+
+@AfterMethod
+public void setUp()
+{
+
+}
+  									
+================================
+Miscellenous Actions
+================================
+
+
+Mouse HOver : 
+
+org.openqa.selenium.interactions
+
+
+Actions 
+
+Actions(WebDriver)
+
+moveToElement(WebElement)
+moveToElement(WebElement, int, int)
+
+
+*******************************************
+Season -2 Selenium   
+Day  - 15th October - Sunday
+*******************************************
+----------------------------------------------------
+to right Click :
+
+contextClick()
+contextClick(WebElement)
+
+------------------------------------------------------
+To Drag and Drop 
+
+
+dragAndDrop(WebElement, WebElement): argument 1 is source , argument 2 is destination
+
+dragAndDropBy(WebElement, int, int)
+
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='draggable']"}
+
+
+NoSuchElementException:
+
+Reason 1: the locator strategy may be incorrect 
+
+Solution 1: correct the locator
+
+Reason 2: there may be synchonization issue (means page may be loaded slow)
+
+Solution 2 : need to implementation some waits technique (Thread.sleep , implicit waits ...)
+
+
+Reason 3 : element may be present in a frame 
+
+Solution 3: need to switch to frame 
+
+????????????????????????????????????????
+Assignment 
+
+in https://emicalculator.net/
+
+drag "Home Loan Amount" to 75 lakhs 
+
+drag "Interest Rate" to 12.5
+
+drag "Loan Tenure" 15 years 
+
+hint : use dragAndDropBy(WebElement, int, int)
+
+??????????????????????????????????????????
+
+
+=======================================================
+Handling Mutltiple Windows or Tabs
+=======================================================
+
+
+getWindowHandle() : String
+
+getWindowHandles() : Set<String>
+
+switchTo(): TargetLocator
+
+//ul[@class='topsocial']/child::li/child::a[contains(@href,'facebook')]
+
+or
+
+//ul[@class='topsocial']/descendant::a[contains(@href,'facebook')]
+
+
+//span[text()='Email address or phone number']/following-sibling::input
+
+
+
+//iframe[contains(@name,'notification-frame')]
+
+
+//a[@class='close']
+
+
+
+*******************************************
+Season -2 Selenium   
+Day  - 16th October - Monday
+*******************************************
+
+
+Multiple Frame Handling :
+
+
+Frame is UI technology to include several pages in a window 
+
+
+
+									Frame
+									
+									
+					frame							iframe
+
+
+driver.switchTo():TargetLocator					
+									
+	
+
+frame(int) : here int means the index of frame/iframe from root starting from 0 
+frame(String): here String is name or id attribute of frame/iframe 
+frame(WebElement): here focus on Frame as WebElement 
+
+
+
+	
+defaultContent()
+
+parentFrame()									
+
+org.openqa.selenium.NoSuchFrameException: No frame element found by name or id demo-frame
+
+org.openqa.selenium.NoSuchFrameException: No frame element found by name or id contents
+
+
+
+*******************************************
+Season -2 Selenium   
+Day  - 17th October - Tuesday
+*******************************************
+
+Alert(I)
+
+accept():void ==> this will click "Ok" button alert 
+dismiss():void    ==>this will click "Cancel" button 
+getText():String ==> this will return text present on alert
+sendKeys(String):  ==> this will type the choice/text  in alert box
+
+driver.switchTo().alert():Alert
+
+
+Please enter a valid user name
+
+??????????????????????????????????????????????
+Assignment
+
+in https://demo.guru99.com/v4/
+
+User ID :	mngr266311
+Password :	Admin123$
+
+do login ..then 
+click on "Delete customer"
+
+Enter some "Customer ID	" and then click on "Submit" button 
+
+verify text on alert?
+
+"Do you really want to delete this Customer?"
+
+then click "ok" on alert
+
+then switch to one more alert 
+
+verify the text on that alert to be ?
+
+"Customer does not exist!!"
+
+and then click on "Ok"
+
+??????????????????????????????????????????????????
+
+Assignment :
+
+1. Navigate to URL : "http://demo.guru99.com/test/guru99home/"
+2. Click on the "JMeter Made easy" image.
+3. Switch to the newly appeared window.
+4. Scroll to the bottom of the screen.
+5. Verify/print the top tutorials values present on the screen.
+
+??????????????????????????????????????????????????????????
+
+*******************************************
+Season -2 Selenium   
+Day  - 18th October - Wednesday
+*******************************************
+
+How to take Screenshot 
+
+
+TakesScreenshot(I)
+
+getScreenshotAs(OutputType<X>):X 
+
+
+OutputType<T>
+
+BASE64 : OutputType<String>
+BYTES : OutputType<byte[]>
+FILE : OutputType<File>
+
+File srcFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		
+		FileUtils.copyFile(srcFile, new File("Adactin"+date+".png"));
+		
+
+
+https://jenkov.com/tutorials/java-internationalization/simpledateformat.html
+
+
+-----------------------------
+JavaScriptExecutor(I)
+
+
+executeScript(String, Object...):object 
+
+String is javascript statement 
+
+e.g window.scrollBy(0, 1000);
+
+
+*******************************************
+Season -2 Selenium   
+Day  - 19th October - Thursday
+*******************************************
+
+
+To Scroll to  bottom of page 
+
+window.scrollBy(0,document.body.scrollHeight)
+
+
+
+To scroll to some element in a web page 
+
+const element = document.getElementById("content");
+element.scrollIntoView();
+
+
+
+========================================================
+Synchronization techniques 
+or
+Waits in Selenium
+or 
+Timeouts in Selenium
+=========================================================
+
+1. using Hard Waits
+
+Thread.sleep() : not encouraged in real time projects 
+
+2.using implicit wait
+
+driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+this statement is implied for all driver.findElement statement 
+
+*******************************************
+Season -2 Selenium   
+Day  - 20th October - Friday
+*******************************************
+
+3.using Explicit Waits
+
+
+Wait(I)
+   until(
+WebDriverWait(C)
+
+WebDriverWait(WebDriver, long)
+
+
+ExpectedConditions
+
+		
+		WebDriverWait myWait=new WebDriverWait(driver, 30);
+		
+		myWait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//span[@id='spinner']"))));
+
+
+4. Fluent Wait 
+
+
+improvements for Explicit Wait 
+
+-> here second paramters is always SECONDS 
+withTimeout(Duration.ofSeconds(30))
+
+-> polling time is always 500 millis 
+ .pollingEvery(Duration.ofMillis(300))
+
+-> No inbuilt exception handling mechanism
+
+
+FluentWait(T)
+
+
+================================
+WebTable
+							WebTables
+							
+							
+		Static                                Dynamic 					
+							
+
+
+<table
+	<th
+	<tbody 
+	      <tr 
+		     <td
+			 <td 
+		  <tr 
+		     <td
+			 <td 
+			 
+			 
+//table/tbody/tr[1]/td[1]    //table/tbody/tr[1]/td[2]  ....... //table/tbody/tr[1]/td[8]
+//table/tbody/tr[2]/td[1]
+:
+:
+
+//table/tbody/tr[36]/td[1]
+
+
+String part1="//table/tbody/tr[";
+
+String part2="]/td["
+
+String part3="]";
+
+
+**************************************************************************************
+********************   Java Season -3 ************************************************
+**************************************************************************************
+
+Maven - project management or build tool
+
+
+Download and configure maven 
+
+Downloading Apache Maven 3.9.5
+
+
+https://maven.apache.org/download.cgi?
+
+
+Binary zip archive	==>   apache-maven-3.9.5-bin.zip
+
+----------------------------
+Configuring Maven
+----------------------------
+
+Environment Variables 
+
+MAVEN_HOME D:\006 LiveTech\jars\apache-maven-3.9.5-bin\apache-maven-3.9.5
+
+M2_HOME D:\006 LiveTech\jars\apache-maven-3.9.5-bin\apache-maven-3.9.5\bin
+
+path D:\006 LiveTech\jars\apache-maven-3.9.5-bin\apache-maven-3.9.5\bin
+
+
+------------------------------------------
+how to check maven is configured ?
+
+go to cmd 
+
+
+mvn -version
+
+C:\Users\Riyaz>mvn -version
+Apache Maven 3.9.5 (57804ffe001d7215b5e7bcb531cf83df38f93546)
+Maven home: D:\006 LiveTech\jars\apache-maven-3.9.5-bin\apache-maven-3.9.5
+Java version: 11.0.20, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk-11
+Default locale: en_IN, platform encoding: Cp1252
+OS name: "windows 11", version: "10.0", arch: "amd64", family: "windows"
+
+
+------------------------------
+Maven Project Structure 
+
+src/main/java   ==>  developers to write the java code for app 
+src/main/resources  ==> developers to store non-java stuff 
+src/test/java ==> developers for writing unit test cases  or testers to write test scripts 
+src/test/resources ==> developers to store non-java stuff for unit cases  or testers to store non-java stuff for system testing
+
+---------------------------------
+pom.xml
+
+here pom means Project Object Model 
+
+
+----------------------------------------------------
+File handling 
+
+----------------------------------------------------------
+how to create a file ?
+
+
+File (C) : java.io 
+
+File(String) : here String is the path of file including filename and extension 
+
+
+createNewFile():boolean 
+
+File f=new File("D:\\006 LiveTech\\jars\\abc.txt");
+		
+System.out.println(f.createNewFile());
+----------------------------------------------------------
+
+how to create folder ?
+
+
+File (C) : java.io 
+
+File(String) : here String is the path of folder 
+
+
+mkdir():boolean
+
+------------------------------------------------------------
+
+How to read and write Excel File 
+
+
+Apache POI jars  (version 5.2.4)
+
+
+org.apache.poi » poi
+
+org.apache.poi » poi-ooxml
+
+org.apache.poi » poi-scratchpad
+
+org.apache.poi » poi-excelant
+
+
+										Excels
+										
+										
+						.xls								.xlsx 
+
+Workbook				HSSFWorkbook						XSSFWorkbook					
+
+Sheet					HSSFSheet							XSSFSheet
+
+Row						HSSFRow								XSSFRow
+
+Cell					HSSFCell							XSSFCell
+
+
+
+Methods : 
+
+
+FileInputStream(C):
+
+FileInputStream(String):String is the path of the file including extension 
+
+
+XSSFWorkbook(C):
+
+new XSSFWorkbook(inputstream)
+
+
+getSheet(String):XSSFSheet  ==> here String is the Sheet name 
+
+
+
+
+Methods In Sheet :
+
+getLastRowNum():int ==> last index of row and count starts from 0 
+
+getPhysicalNumberOfRows():int ==> no of rows excluding null rows count starts from 1 
+
+getRow(int):XSSFRow  ==> here int means index of row (index starts from 0)
+
+
+Methods in XSSFRow :
+
+getLastCellNum():short ==> last index of cell in that row  and count starts from 1
+
+getPhysicalNumberOfCells():int ==> no of cells excluding null cells count starts from 1 	
+
+getCell(int):XSSFCell ==> here int means index of cell (index starts from 0)				
+
+
+Methods In XSSFCell :
+
+
+getNumericCellValue():double
+
+getStringCellValue():String
+
+getBooleanCellValue():Boolean
+
+getCellType():CellType
+
+=========================================
+Writing to Excel 
+
+
+case 1: Modifying existing cell in a row 
+
+ws.getRow(index of Row).getCell(index of Cell).setCellValue(value)
+
+case 2: creating a cell in existing row
+
+ws.getRow(index of Row).createCell(index of cell).setCellValue(value)
+
+case 3: creating a row and cell in it 
+
+ws.createRow(index of row).createCell(index of cell).setCellValue(value)
