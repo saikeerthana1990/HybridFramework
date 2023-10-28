@@ -1332,3 +1332,80 @@ ws.getRow(index of Row).createCell(index of cell).setCellValue(value)
 case 3: creating a row and cell in it 
 
 ws.createRow(index of row).createCell(index of cell).setCellValue(value)
+
+*******************************************
+Season -3 Java   
+28th  October - Saturday
+*******************************************
+
+
+Properties File 
+
+it's a flat file to store key , value pairs 
+
+.properties 
+
+java.util 
+
+Properties (C) :
+
+
+new Properties();
+
+load(InputStream)
+
+		FileInputStream fis=new FileInputStream("Properties\\config.properties");
+		
+		Properties pr=new Properties();
+		
+		pr.load(fis);
+		
+getProperty(String):String 
+
+============================================
+HashMap (C)
+
+it is also to store key value pairs 
+
+java.util 
+
+
+Map(I) :
+
+Map<K, V>(I):
+    Entry<K, V>(I):
+----------------------------------------------------	
+Methods In Map :
+
+put(K, V):V
+
+size():int 
+
+keySet():Set<K>
+
+values():Collection<V>
+
+entrySet():Set<Entry<K, V>>
+
+------------------------------------------	
+HashMap (C): 
+
+
+HashMap() : initial capacity 16
+HashMap(int)
+HashMap(int, float)
+HashMap(Map<? extends K, ? extends V>)
+
+get(Object):V 
+
+containsKey(Object):boolean
+containsValue(Object):boolean
+
+isEmpty():boolean 
+
+---------------------------------------------
+Entry(I)
+
+getKey():K
+getValue():V 
+--------------------------------------------------
