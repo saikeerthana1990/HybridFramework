@@ -1409,3 +1409,67 @@ Entry(I)
 getKey():K
 getValue():V 
 --------------------------------------------------
+
+
+*********************************************************************
+************* Selenium Season - 3 ***********************************
+*********************************************************************
+===============  30th October Monday ================================
+**********************************************************************
+
+
+src/main/java
+src/main/resources
+src/test/java
+		|
+		 utils
+		|
+		 testscripts
+		      |
+			  regression
+			  |
+			  smoke
+			  |
+			  sanity
+		|
+		 base 
+		 
+src/test/resources
+        |
+		 testdata
+		     |
+			 excels
+			     |
+				 regression
+				 |
+				 smoke
+				 |
+				 sanity
+			  |
+			 textfiles
+		 |
+		 properties
+		      |
+			  config
+			  |
+			  locators
+			  
+			  
+Data Parameterization using TestNG :
+
+with help of @DataProvider annotation
+
+
+reyaz009	reyaz123		Adactin.com - Search Hotel
+reyaz009	reyaz456		Adactin.com - Hotel Reservation System
+reyaz1245	reyaz123		Adactin.com - Hotel Reservation System
+reyaz1245	reyaz456		Adactin.com - Hotel Reservation System
+
+************* Selenium Season - 3 ***********************************
+*********************************************************************
+===============  30th October Monday ================================
+**********************************************************************
+
+allRows Size 7
+
+allRows Size 8
