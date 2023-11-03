@@ -1467,9 +1467,31 @@ reyaz1245	reyaz456		Adactin.com - Hotel Reservation System
 
 ************* Selenium Season - 3 ***********************************
 *********************************************************************
-===============  30th October Monday ================================
+===============  31st October Tuesday ================================
 **********************************************************************
 
 allRows Size 7
 
 allRows Size 8
+
+
+
+************* Selenium Season - 3 ***********************************
+*********************************************************************
+===============  1st November Wednesday =============================
+*********************************************************************
+
+
+Keyword Driven Framework :
+
+Keyword means a method/function which do a task /a step in test case 
+
+3 classes :
+
+3 categories of keywords 
+
+
+GenericKeywords
+ValidationKeywords
+ApplicationKeywords
+

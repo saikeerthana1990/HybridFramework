@@ -18,15 +18,22 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	
-	public WebDriver driver;
+	public static WebDriver driver;
 	public FileInputStream fis;
-	public Properties configProperties;
+	public static Properties configProperties;
+	public FileInputStream fis2;
+	public static Properties locatorProperties;
+	
 	@BeforeTest
 	public void beforeTest() throws IOException
 	{
 		fis=new FileInputStream("src\\test\\resources\\properties\\config.properties");
 		configProperties=new Properties();
 		configProperties.load(fis);
+		
+		fis2=new FileInputStream("src\\test\\resources\\properties\\locators.properties");
+		locatorProperties=new Properties();
+		locatorProperties.load(fis2);
 		
 	}
 	

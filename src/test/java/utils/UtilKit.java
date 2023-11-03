@@ -38,13 +38,18 @@ public class UtilKit {
 		
 		HashMap<String, String> testDataMap=new HashMap<String, String>();
 		
-		for(int i=1;i<testCaseRows.size();i++)
+		System.out.println("no of testCaseRows ..."+testCaseRows.size());
+		System.out.println(testCaseRows);
+		
+		for(int i=1;i<=testCaseRows.size();i++)
 		{
 			int noOfCells=testCaseRows.get(0).getLastCellNum();
 			
+			System.out.println("noOfCells "+noOfCells);
+			
 			for(int j=1;j<noOfCells;j++)
 			{
-				testDataMap.put(testCaseRows.get(0).getCell(j).getStringCellValue(), testCaseRows.get(i).getCell(j).getStringCellValue());
+				testDataMap.put(testCaseRows.get(0).getCell(j).getStringCellValue(), testCaseRows.get(1).getCell(j).getStringCellValue());
 			}
 		}
 		
@@ -74,11 +79,12 @@ public class UtilKit {
 			
 			if(allRows.get(i).getCell(0).getStringCellValue().equalsIgnoreCase(testcase))
 			{
-				testCaseRows.add(ws.getRow(i));
-				
+				//testCaseRows.add(ws.getRow(i));
+				testCaseRows.add(allRows.get(i));
 			}
 		}
 		
+		System.out.println("NO of testCaseRows "+testCaseRows.size());
 		return testCaseRows;
 		
 	}
