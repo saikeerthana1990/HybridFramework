@@ -1,17 +1,25 @@
 package utils;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
-public class UtilKit {
+import base.BaseTest;
+
+public class UtilKit extends BaseTest {
 	
 	static FileInputStream fis;
 	public static HashMap<String,String> getTestData(String testcase)
@@ -38,8 +46,7 @@ public class UtilKit {
 		
 		HashMap<String, String> testDataMap=new HashMap<String, String>();
 		
-		System.out.println("no of testCaseRows ..."+testCaseRows.size());
-		System.out.println(testCaseRows);
+		
 		
 		for(int i=1;i<=testCaseRows.size();i++)
 		{
@@ -71,7 +78,7 @@ public class UtilKit {
 			}
 		}
 		
-		System.out.println("allRows Size "+allRows.size());
+		
 		ArrayList<Row> testCaseRows=new ArrayList<Row>();
 		
 		for(int i=0;i<allRows.size();i++)
@@ -86,6 +93,36 @@ public class UtilKit {
 		
 		System.out.println("NO of testCaseRows "+testCaseRows.size());
 		return testCaseRows;
+		
+	}
+	
+	public static String getScreenshot(String testcaseName) 
+	{
+		 String screenshotsFolderPath=System.getProperty("user.dir")+"\\screenshots";
+			
+			File screenshotFolder=new File(screenshotsFolderPath);
+			
+			screenshotFolder.mkdir();
+			
+			String pattern = "yyyy-MM-dd HH:mm:ss";
+			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+			String date = simpleDateFormat.format(new Date());
+			
+			date=date.replace(":", "-");
+			
+			String filePath=screenshotFolder+"\\"+testcaseName+date+".png";
+			
+		   File srcFile=	((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		
+		   try {
+			FileUtils.copyFile(srcFile, new File(filePath));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		   
+		   return filePath;
 		
 	}
 
