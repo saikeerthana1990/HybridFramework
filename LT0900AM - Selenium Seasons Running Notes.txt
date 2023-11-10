@@ -1553,58 +1553,19 @@ ExtentTest
 
 ExtentSparkReporter
 
+
+
+
 ************* Selenium Season - 3 ***********************************
 *********************************************************************
-===============  7th November Tuesday    =============================
+===============  8th November Wednesday    ==========================
 *********************************************************************
 
-Listeners in TestNG :
+in BDD :
 
-Listeners are nothing but events used by TestNG 
+Feature means Test Scenario nothing but a module/feature/behaviour/functionality
 
-iTestListener (I) in TestNG : 
-
-Project 1 : using
-
-Hybrid Framework ( Data Driven + Keyword Driven + unit testing framework as TestNg + POM design pattern)
-
-
--------------------------------------------------------------------------------
-
-Project 2:
-
-BDD using Cucumber API 
-
-BDD Framework : BDD stands for Behaviour Driven Developement
-
-suited for Agile (Scrum Framework) projects
-
-we need to 2 new dependencies :
-
-cucumber-java 
-
-cucumber-junit or cucumber-testNg 
-
-
-Here ,
-
-TestScripts will be writen in feature files(files having extension .feature) 
-
-Here Feature means/ similar to Test Scenario
-
-Feature is a collection of Screnarios 
-
-Here Scenario means / similar to Test Case 
-
-
-
------------------------------------
-Add below plugin
-
-Cucumber Eclipse plugin from "Eclipse Market place"
-
--------------------------------------------
-We will write Feature feature using Gherkin Language 
+Scenario means Test Case 
 
 #Author: your.email@your.domain.com
 #Keywords Summary :
@@ -1625,31 +1586,64 @@ We will write Feature feature using Gherkin Language
 ## (Comments)
 #Sample Feature Definition Template
 
--------------------------------------------------------
-Feature:  means a Test Scenario
+???
+Interview Question :
 
-Scenario:  means a Test Case 
+how do you achive Data Parameterization in BDD or Cucumber ?
 
-Given used for steps under Sceanario  ( to write some preconditions) 
+ans : using Scenario Outline and Examples
 
-When used for any action on Web page 
+#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
 
-Then for validation 
+------------------------------------------------------
+
+Hooks in cucumber 
+
+this are similar to annotations in TestNG 
+
+we can achive this using two annotations 
+
+@Before 
+this annotated method will be executed before each and every Scenario
+
+@After 
+this annotated method will be executed after each and every Scenario
+
+
+where hooks are defined ?
+
+we will define them in StepDefinitions class 
+
+--------------------------------------------------------
+DataTable in Cucumber 
 
 
 
 
+You can implement missing steps with the snippets below:
+
+@When("user click link using xpath {string}")
+public void user_click_link_using_xpath(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
 
 
-
-
-
-
-io.cucumber.junit.UndefinedStepException: The step 'user verify the presence of text using xpath "//div[@class='auth_error']/b"' is undefined.
+io.cucumber.junit.UndefinedStepException: The step 'user click link using xpath "//a[text()='New User Register Here']"' is undefined.
 You can implement this step using the snippet(s) below:
 
-@Then("user verify the presence of text using xpath {string}")
-public void user_verify_the_presence_of_text_using_xpath(String string, io.cucumber.datatable.DataTable dataTable) {
+@When("user click link using xpath {string}")
+public void user_click_link_using_xpath(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+io.cucumber.junit.UndefinedStepException: The step 'user enters details in Registration Form' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("user enters details in Registration Form")
+public void user_enters_details_in_registration_form(io.cucumber.datatable.DataTable dataTable) {
     // Write code here that turns the phrase above into concrete actions
     // For automatic transformation, change DataTable to one of
     // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
@@ -1661,68 +1655,50 @@ public void user_verify_the_presence_of_text_using_xpath(String string, io.cucum
 }
 
 
-Hooks in Cucumber :
+
+************* Selenium Season - 3 ***********************************
+*********************************************************************
+===============  9th November Thursday    ==========================
+*********************************************************************
+
+Git 
+
+Github account 
+
+many tools Github/gitlab/bitbucket etc ..
+
+how to download and install git ?
 
 
-@Before 
+git is a SCM (Source Control Management) tool 
 
-this annotated method will be executed before each Scenario in Feature 
+https://git-scm.com/
 
-@After 
-
-this annotated method will be executed after each Scenario in Feature 
+click download button ==> under "Standalone Installer" ==> click " 64-bit Git for Windows Setup".
 
 
-****************************
-Imp question 
-*****************************
+create a github account ?
 
-How do you achieve paramterization in BDD / Cucumber 
+https://github.com/ ==> sign up ==> 
 
-Ans :
-
-using Scenario Outline and Examples
-
-*************************************************
-
-Background: List of steps run before each of the scenarios
-
-?????????????????????????????????????????????
-
-Assignment 
-
-Write two Scenario's for Registration Functionality 
-
-1) using each step for entering data (i.e harding coding )
-2) using only one step using datatable concept 
+echo "# BDDFramework" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Livetech8amAug/BDDFramework.git
+git push -u origin master
 
 
-----------------------------------------------------------------------------
-
-Git and Github /Gitlab /bitbucket 
-
-how to download git ?
-
-git is a Source Control Management tool (SCM tools ) 
+https://github.com/Livetech8amAug/BDDFramework
 
 
-https://git-scm.com/downloads
-under Standalone Installer :
-click below link 
-64-bit Git for Windows Setup.
+-------------------------------------
+Jenkins 
 
---------------------------------------------------
-how to create git hub account 
+CI CD tool 
+(continous integration and continuous deployment/development) 
 
-go to https://github.com/
-
-click on "Sign up"
-
-Enter your email* and click continue
-
-
-
-
+Jenkins , Team city , Bamboo , Circle CI 
 
 
 

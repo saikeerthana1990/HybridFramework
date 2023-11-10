@@ -32,7 +32,7 @@ public class ValidateRegistrationUsingPOM extends BaseTest {
 		
 		registrationPage.usernameTextbox(dataMap.get("Username"));
 		
-		Assert.assertTrue(false);
+		//Assert.assertTrue(false);
 		
 	}
 	
